@@ -152,7 +152,7 @@ export default function ExperienceSection({ setActiveSection }: ExperienceSectio
           <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-4">Looking Forward</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm passionate about leveraging AI and modern web technologies to create innovative solutions. 
+              I&apos;m passionate about leveraging AI and modern web technologies to create innovative solutions. 
               Currently seeking opportunities to contribute to cutting-edge projects in AI, web development, 
               and cloud infrastructure while continuing to expand my expertise in emerging technologies.
             </p>

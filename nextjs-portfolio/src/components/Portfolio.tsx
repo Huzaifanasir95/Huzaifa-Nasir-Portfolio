@@ -1,25 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, useScroll, useSpring } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { 
-  Home, 
-  User, 
-  Briefcase, 
-  Award, 
-  Mail, 
-  Github, 
-  Linkedin, 
-  ExternalLink,
-  Code,
-  Globe,
-  Gamepad2,
-  Bot,
-  Server,
-  Menu,
-  X
-} from 'lucide-react'
+import { useState } from 'react'
+import { useScroll, useSpring } from 'framer-motion'
 import Navigation from './Navigation'
 import HeroSection from './HeroSection'
 import AboutSection from './AboutSection'

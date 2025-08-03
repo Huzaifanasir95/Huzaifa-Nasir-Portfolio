@@ -20,7 +20,7 @@ interface Project {
   youtube?: string
   details: string
   challenges: string
-  icon: React.ComponentType<any>
+  icon: React.ComponentType<{ size?: number; className?: string }>
 }
 
 export default function ProjectsSection({ setActiveSection }: ProjectsSectionProps) {
@@ -258,7 +258,7 @@ export default function ProjectsSection({ setActiveSection }: ProjectsSectionPro
         • Parallel Dynamic Single-Source Shortest Path (SSSP) algorithm implementation
         • Supports dynamic graph updates (edge insertions and deletions)
         • Computes shortest paths from source vertex in weighted undirected graphs
-        • Accuracy evaluation using path validation against Dijkstra's ground-truth
+        • Accuracy evaluation using path validation against Dijkstra&apos;s ground-truth
         
         **Core Features:**
         • Dynamic graph updates with edge insertions and deletions
@@ -286,7 +286,7 @@ export default function ProjectsSection({ setActiveSection }: ProjectsSectionPro
         • Optimizing METIS graph partitioning for balanced load distribution
         • Synchronizing MPI processes with OpenMP multi-threading
         • Managing memory allocation and deallocation in distributed environment
-        • Ensuring accuracy with path validation against Dijkstra's algorithm
+        • Ensuring accuracy with path validation against Dijkstra&apos;s algorithm
         • Handling edge cases in graph fragmentation and connectivity
         • Achieving scalability across large-scale dynamic networks
         • Balancing communication overhead with computational efficiency

@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Github, Linkedin, ChevronDown } from 'lucide-react'
-import Image from 'next/image'
 
 interface HeroSectionProps {
   setActiveSection: (section: string) => void
