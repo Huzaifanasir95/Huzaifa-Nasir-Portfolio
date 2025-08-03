@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huzaifa - Contact Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Custom styles for a modern, aesthetic look */
+        body {
+            font-family: 'Montserrat', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #232b5d 0%, #4f378b 100%);
+            color: #f3f4f6;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Navigation Panel */
+        .nav-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background: rgba(36, 41, 82, 0.92);
+            backdrop-filter: blur(16px);
+            box-shadow: 4px 0 24px rgba(79, 55, 139, 0.25);
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+
+        .nav-panel.active {
+            transform: translateX(0);
+        }
+
+        .nav-panel ul {
+            padding: 30px;
+            list-style: none;
+        }
+
+        .nav-panel ul li {
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideIn 0.4s ease forwards;
+        }
+
+        .nav-panel ul li:nth-child(1) { animation-delay: 0.2s; }
+        .nav-panel ul li:nth-child(2) { animation-delay: 0.4s; }
+        .nav-panel ul li:nth-child(3) { animation-delay: 0.6s; }
+        .nav-panel ul li:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .nav-panel ul li a {
+            color: #e0e7ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-panel ul li a:hover {
+            color: #a78bfa;
+            text-shadow: 0 2px 8px #a78bfa44;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1100;
+        }
+
+        .hamburger div {
+            background: #a78bfa;
+            height: 4px;
+            border-radius: 4px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Section Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.1s cubic-bezier(0.4,0,0.2,1) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(36, 41, 82, 0.95);
+            border: 1.5px solid #a78bfa44;
+            box-shadow: 0 8px 32px #a78bfa22;
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(79, 55, 139, 0.15);
+            border: 1.5px solid #a78bfa33;
+            color: #f3f4f6;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #a78bfa;
+            box-shadow: 0 0 8px #a78bfa55;
+        }
+
+        /* Button Animation */
+        .animated-button {
+            background: linear-gradient(90deg, #6366f1, #a78bfa);
+            box-shadow: 0 4px 16px #a78bfa33;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animated-button:hover {
+            background: linear-gradient(90deg, #a78bfa, #6366f1);
+            box-shadow: 0 8px 24px #a78bfa55;
+        }
+
+        /* Contact Info */
+        .contact-info p {
+            color: #d1d5db;
+        }
+
+        .contact-info a {
+            color: #a78bfa;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #6366f1;
+        }
+
+        /* Desktop Navigation */
+        @media only screen and (min-width: 1024px) {
+            .hamburger {
+                display: none;
+            }
+
+            .nav-panel {
+                position: static;
+                width: auto;
+                height: auto;
+                box-shadow: none;
+                background: transparent;
+                transform: translateX(0);
+            }
+
+            .nav-panel ul {
+                display: flex;
+                padding: 0;
+            }
+
+            .nav-panel ul li {
+                margin: 0 15px;
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .nav-panel ul li a {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="bg-gray-900 shadow-lg py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-xl font-semibold text-white tracking-wide">Huzaifa's Portfolio</div>
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburgerMenu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Navigation Panel -->
+            <nav class="nav-panel" id="navPanel">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="profile.html" class="nav-link">Profile</a></li>
+                    <li><a href="project.html" class="nav-link">Projects</a></li>
+                    <li><a href="skills.html" class="nav-link">Skills</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto mt-16 px-6 py-12">
+        <h1 class="text-4xl font-bold text-center mb-12 text-white fade-in">Contact Me</h1>
+
+        <!-- Contact Form -->
+        <div class="max-w-lg mx-auto contact-form fade-in">
+            <form action="https://formspree.io/f/xovvprpw" method="POST">
+                <!-- Name Field -->
+                <div class="mb-6">
+                    <label for="name" class="block text-lg font-semibold mb-2 text-white">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 text-white rounded-md focus:outline-none">
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-6">
+                    <label for="email" class="block text-lg font-semibold mb-2 text-white">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 text-white rounded-md focus:outline-none">
+                </div>
+
+                <!-- Subject Field -->
+                <div class="mb-6">
+                    <label for="subject" class="block text-lg font-semibold mb-2 text-white">Subject</label>
+                    <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 text-white rounded-md focus:outline-none">
+                </div>
+
+                <!-- Message Field -->
+                <div class="mb-6">
+                    <label for="message" class="block text-lg font-semibold mb-2 text-white">Message</label>
+                    <textarea id="message" name="message" required rows="4" class="w-full px-4 py-2 text-white rounded-md focus:outline-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full text-white font-semibold py-3 px-4 rounded-lg animated-button flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="mt-12 text-center contact-info fade-in">
+            <h2 class="text-3xl font-bold mb-4 text-white">Contact Information</h2>
+            <p class="text-lg mb-4">You can also reach me through the following:</p>
+            <p class="text-lg mb-2">Email: <a href="mailto:nasirhuzaifa95@gmail.com">nasirhuzaifa95@gmail.com</a></p>
+        </div>
+    </section>
+
+    <script>
+        // Hamburger Menu Functionality
+        const hamburger = document.getElementById("hamburgerMenu");
+        const navPanel = document.getElementById("navPanel");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navPanel.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huzaifa's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <style>
+        /* Batman cursor styles */
+        :root {
+            cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjQtMDItMTVUMTU6NDc6MTgtMDU6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMDItMTVUMTU6NDc6MTgtMDU6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI0LTAyLTE1VDE1OjQ3OjE4LTA1OjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjIyYzExODZiLTJmMjQtYzU0Ny1hMjI1LTViYjU5ZjM2NzM2YyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgc3RFdnQ6d2hlbj0iMjAyNC0wMi0xNVQxNTo0NzoxOC0wNTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjAgKE1hY2ludG9zaCkiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wZXPWAAAAXNJREFUWIXtlz1LA0EQht+9XGF+gYiFlZ3/wcLOTmy0tRAsrPwBFhYWFhYWFhYWaQIp0qS1SyOIYBpjYWMXbIKFhYVY2IjgB8S7sbgkZO+S3F6SQpgHFo6dnX12b3b2Fg4ODqpAKaXUGLACzABjQA/QBH4AL8ATcA1cSSnrWQLKQoQx5gSYd3NPgSUp5YuUsgFgjLkDZm2eKyBvjNkWQiwC+0DV87sSkAcawDYwIoRYBPaAO8CYeOaAEjAJ7AohVqWUj977vPf+FbAGDAFbQohlKeWLJ+AYWAAGgU0p5Z0/QEr5BmwAvcC6EOLc878AjoB5oA/YlFK+/1XtUsoPYBsYBlaEEGe2/BI4AKYB11LK5n8VbQXUgF1gHNgRQhxaa8+BCWCf3/a2hIZtQQu4AHLA0+/qBXAJuMAxkLMxQdAArgAHuA4RUIkQ4IeXIwT44aUIAaEwFCHgL4YjBITCYISAv/AcIeBPPEUI8PEYIcDHQ4SANj4jBPwCzHVzZYQzuK8AAAAASUVORK5CYII=') 12 12, auto;
+        }
+
+        /* Custom cursor for clickable elements */
+        a, button, [role="button"], input[type="submit"], input[type="button"], .clickable {
+            cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjQtMDItMTVUMTU6NDc6MTgtMDU6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMDItMTVUMTU6NDc6MTgtMDU6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI0LTAyLTE1VDE1OjQ3OjE4LTA1OjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjIyYzExODZiLTJmMjQtYzU0Ny1hMjI1LTViYjU5ZjM2NzM2YyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgc3RFdnQ6d2hlbj0iMjAyNC0wMi0xNVQxNTo0NzoxOC0wNTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjAgKE1hY2ludG9zaCkiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wZXPWAAAAXNJREFUWIXtlz1LA0EQht+9XGF+gYiFlZ3/wcLOTmy0tRAsrPwBFhYWFhYWFhYWaQIp0qS1SyOIYBpjYWMXbIKFhYVY2IjgB8S7sbgkZO+S3F6SQpgHFo6dnX12b3b2Fg4ODqpAKaXUGLACzABjQA/QBH4AL8ATcA1cSSnrWQLKQoQx5gSYd3NPgSUp5YuUsgFgjLkDZm2eKyBvjNkWQiwC+0DV87sSkAcawDYwIoRYBPaAO8CYeOaAEjAJ7AohVqWUj977vPf+FbAGDAFbQohlKeWLJ+AYWAAGgU0p5Z0/QEr5BmwAvcC6EOLc878AjoB5oA/YlFK+/1XtUsoPYBsYBlaEEGe2/BI4AKYB11LK5n8VbQXUgF1gHNgRQhxaa8+BCWCf3/a2hIZtQQu4AHLA0+/qBXAJuMAxkLMxQdAArgAHuA4RUIkQ4IeXIwT44aUIAaEwFCHgL4YjBITCYISAv/AcIeBPPEUI8PEYIcDHQ4SANj4jBPwCzHVzZYQzuK8AAAAASUVORK5CYII=') 12 12, pointer;
+        }
+
+        /* Batman-themed hover animation */
+        @keyframes batSignal {
+            0% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+            100% { transform: scale(1) rotate(360deg); opacity: 1; }
+        }
+
+        /* Update mouse trail with Batman logo */
+        .mouse-trail {
+            width: 24px;
+            height: 24px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjQuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjQtMDItMTVUMTU6NDc6MTgtMDU6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjQtMDItMTVUMTU6NDc6MTgtMDU6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI0LTAyLTE1VDE1OjQ3OjE4LTA1OjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjIyYzExODZiLTJmMjQtYzU0Ny1hMjI1LTViYjU5ZjM2NzM2YyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ5YzFhMjM3LTRmZTAtNDZiZC05ZWY1LTVmYThjNzM2NjM0YyIgc3RFdnQ6d2hlbj0iMjAyNC0wMi0xNVQxNTo0NzoxOC0wNTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDI0LjAgKE1hY2ludG9zaCkiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wZXPWAAAAXNJREFUWIXtlz1LA0EQht+9XGF+gYiFlZ3/wcLOTmy0tRAsrPwBFhYWFhYWFhYWaQIp0qS1SyOIYBpjYWMXbIKFhYVY2IjgB8S7sbgkZO+S3F6SQpgHFo6dnX12b3b2Fg4ODqpAKaXUGLACzABjQA/QBH4AL8ATcA1cSSnrWQLKQoQx5gSYd3NPgSUp5YuUsgFgjLkDZm2eKyBvjNkWQiwC+0DV87sSkAcawDYwIoRYBPaAO8CYeOaAEjAJ7AohVqWUj977vPf+FbAGDAFbQohlKeWLJ+AYWAAGgU0p5Z0/QEr5BmwAvcC6EOLc878AjoB5oA/YlFK+/1XtUsoPYBsYBlaEEGe2/BI4AKYB11LK5n8VbQXUgF1gHNgRQhxaa8+BCWCf3/a2hIZtQQu4AHLA0+/qBXAJuMAxkLMxQdAArgAHuA4RUIkQ4IeXIwT44aUIAaEwFCHgL4YjBITCYISAv/AcIeBPPEUI8PEYIcDHQ4SANj4jBPwCzHVzZYQzuK8AAAAASUVORK5CYII=') no-repeat center center;
+            background-size: contain;
+            border: none;
+            animation: batSignal 2s infinite;
+            pointer-events: none;
+            position: fixed;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Enhanced hover effects for clickable elements */
+        a:hover, button:hover, [role="button"]:hover, input[type="submit"]:hover, input[type="button"]:hover, .clickable:hover {
+            transform: scale(1.05) rotate(5deg);
+            transition: all 0.3s ease;
+        }
+
+        /* Batman-themed glow effect for focused elements */
+        a:focus, button:focus, input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3), 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+
+        body {
+            font-family: 'Montserrat', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            background: radial-gradient(ellipse at 20% 20%, #4338ca 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 80%, #6d28d9 0%, transparent 60%);
+            opacity: 0.12;
+            pointer-events: none;
+            animation: bgMove 12s ease-in-out infinite alternate;
+        }
+        @keyframes bgMove {
+            0% { background-position: 20% 20%, 80% 80%; }
+            100% { background-position: 30% 10%, 70% 90%; }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-underline {
+            position: absolute;
+            left: 0; bottom: 0;
+            height: 3px;
+            width: 0;
+            background: linear-gradient(90deg, #6366f1, #a78bfa);
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(.4,0,.2,1);
+        }
+        .nav-link.active .nav-underline {
+            width: 100%;
+        }
+        .nav-link:focus {
+            outline: 2px solid #a78bfa;
+            outline-offset: 2px;
+        }
+        .floating-card {
+            background: rgba(15, 23, 42, 0.85);
+            box-shadow: 0 8px 32px 0 #4338ca33, 0 1.5px 8px 0 #6d28d955;
+            border: 1.5px solid #4338ca33;
+            backdrop-filter: blur(16px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .floating-card:hover, .floating-card:focus-within {
+            box-shadow: 0 20px 48px 0 #4338ca77, 0 2px 16px 0 #6d28d999;
+            border-color: #4338ca;
+            transform: translateY(-10px) scale(1.02) rotateX(2deg);
+            z-index: 2;
+        }
+        .floating-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(90deg, #4338ca, #6d28d9);
+            z-index: -1;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .floating-card:hover::before {
+            opacity: 0.15;
+        }
+        .floating-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.15), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+        .floating-card:hover::after {
+            opacity: 1;
+        }
+        .floating-label {
+            position: absolute;
+            left: 1rem;
+            top: 1.1rem;
+            color: #c7d2fe;
+            pointer-events: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        .floating-input:focus + .floating-label,
+        .floating-input:not(:placeholder-shown) + .floating-label {
+            top: -0.8rem;
+            left: 0.75rem;
+            font-size: 0.85rem;
+            color: #a78bfa;
+            background: rgba(36,41,82,0.85);
+            padding: 0 0.3rem;
+        }
+        .section-divider {
+            display: block;
+            width: 100vw;
+            height: 80px;
+            margin: 0;
+            padding: 0;
+        }
+        @media only screen and (min-width: 1024px) {
+            .floating-card {
+                border-radius: 2rem;
+            }
+        }
+        .animated-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background-size: 200% auto;
+        }
+        .animated-button:hover {
+            background-position: right center;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(99, 102, 241, 0.5);
+        }
+        .animated-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.6s;
+            opacity: 0;
+        }
+        .animated-button:hover::after {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s;
+        }
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #a78bfa);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+        .nav-link:hover::before {
+            width: 100%;
+            opacity: 1;
+        }
+        .nav-link.active::before {
+            width: 100%;
+            opacity: 1;
+        }
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1, #a78bfa);
+            transform-origin: 0 50%;
+            transform: scaleX(0);
+            z-index: 1000;
+        }
+        .mouse-trail {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: all 0.15s ease;
+            z-index: 10000;
+        }
+        section {
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        section[data-aos] {
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="fixed w-full z-50 top-0 left-0 flex justify-center pointer-events-none">
+        <nav class="pointer-events-auto bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl ring-1 ring-white/20 mt-4 px-10 py-4 flex items-center gap-10 transition-all duration-500 max-w-4xl mx-auto border border-white/20 relative">
+            <img src="img/profile.jpg" alt="Logo" class="w-10 h-10 rounded-full shadow-md border-2 border-indigo-400 mr-4">
+            <a href="#home" class="nav-link text-white font-semibold text-lg px-3 py-1 rounded-lg transition-colors duration-150 hover:bg-indigo-500/30 focus:bg-indigo-500/40 relative">Home<span class="nav-underline"></span></a>
+            <a href="#profile" class="nav-link text-white font-semibold text-lg px-3 py-1 rounded-lg transition-colors duration-150 hover:bg-indigo-500/30 focus:bg-indigo-500/40 relative">Profile<span class="nav-underline"></span></a>
+            <a href="#projects" class="nav-link text-white font-semibold text-lg px-3 py-1 rounded-lg transition-colors duration-150 hover:bg-indigo-500/30 focus:bg-indigo-500/40 relative">Projects<span class="nav-underline"></span></a>
+            <a href="#skills" class="nav-link text-white font-semibold text-lg px-3 py-1 rounded-lg transition-colors duration-150 hover:bg-indigo-500/30 focus:bg-indigo-500/40 relative">Skills<span class="nav-underline"></span></a>
+            <a href="#contact" class="nav-link text-white font-semibold text-lg px-3 py-1 rounded-lg transition-colors duration-150 hover:bg-indigo-500/30 focus:bg-indigo-500/40 relative">Contact<span class="nav-underline"></span></a>
+        </nav>
+        <!-- Hamburger for mobile -->
+        <div class="lg:hidden fixed right-6 top-6 z-50 pointer-events-auto">
+            <button id="hamburgerMenu" class="flex flex-col gap-1 w-9 h-9 items-center justify-center bg-white/20 rounded-full shadow-lg border border-white/30 hover:bg-indigo-500/30 transition-all duration-300">
+                <span class="block w-6 h-0.5 bg-indigo-300 rounded transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-indigo-300 rounded transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-indigo-300 rounded transition-all duration-300"></span>
+            </button>
+        </div>
+        <nav id="mobileNav" class="fixed top-0 left-0 w-full h-full bg-black/70 backdrop-blur-lg flex flex-col items-center justify-center gap-8 z-40 hidden">
+            <a href="#home" class="nav-link text-white text-2xl font-bold" onclick="closeMobileNav()">Home</a>
+            <a href="#profile" class="nav-link text-white text-2xl font-bold" onclick="closeMobileNav()">Profile</a>
+            <a href="#projects" class="nav-link text-white text-2xl font-bold" onclick="closeMobileNav()">Projects</a>
+            <a href="#skills" class="nav-link text-white text-2xl font-bold" onclick="closeMobileNav()">Skills</a>
+            <a href="#contact" class="nav-link text-white text-2xl font-bold" onclick="closeMobileNav()">Contact</a>
+        </nav>
+    </header>
+    <main class="pt-24">
+        <!-- Home/Hero Section -->
+        <section id="home" class="h-screen flex items-center justify-center" data-aos="fade-up">
+            <div class="text-center hero-content animate-fadeInUp">
+                <img src="img/profile.jfif" alt="Profile Picture" class="mx-auto rounded-full w-36 h-36 mb-6 profile-img shadow-xl transition-transform duration-500 hover:scale-105">
+                <h1 class="text-5xl font-bold text-white mb-3">Hi, I'm Huzaifa 👋</h1>
+                <p class="text-lg text-gray-300 max-w-md mx-auto leading-relaxed">
+                    Computer Science Student at FAST-NUCES | Skilled in Python, MERN Stack, Java, C++, Kubernetes, AWS, Docker, Terraform, and Parallel Computing with MPI/OpenMP | Passionate about AI, Game Development, Web Development, and DevOps
+                </p>
+                <a href="#projects" class="mt-6 inline-block text-white font-semibold py-3 px-8 rounded-lg animated-button transition-transform duration-300 hover:-translate-y-1 shadow-lg bg-gradient-to-r from-indigo-500 to-purple-400">Explore My Work <i class="fa-solid fa-arrow-down ml-2"></i></a>
+            </div>
+        </section>
+        <svg class="section-divider" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#4f378b" fill-opacity="1" d="M0,32L1440,80L1440,0L0,0Z"></path></svg>
+        <!-- Profile Section -->
+        <section id="profile" class="container mx-auto px-6 py-20" data-aos="fade-right">
+            <div class="text-center mb-12">
+                <img src="img/profile.jfif" alt="Profile Picture" class="mx-auto rounded-full w-40 h-40 mb-6 profile-img shadow-2xl">
+                <h1 class="text-4xl font-bold text-white mb-2">Huzaifa</h1>
+                <p class="text-lg text-gray-300">Computer Science Student | Game Developer | Web Developer</p>
+            </div>
+            <div class="max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl font-bold text-white border-b border-gray-700 pb-2 mb-6">About Me</h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Hi, I'm Huzaifa, a passionate Computer Science student at FAST-NUCES with a keen interest in creating innovative digital solutions. My expertise spans game development, web development, and exploring cutting-edge technologies like AI. I'm constantly learning and pushing my skills to build impactful projects.
+                </p>
+            </div>
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-white border-b border-gray-700 pb-2 mb-6">Connect With Me</h2>
+                <div class="flex justify-center space-x-8">
+                    <a href="https://www.linkedin.com/in/huzaifa-nasir-/" target="_blank" class="social-icon text-3xl transition-transform duration-300 hover:-translate-y-1 hover:text-indigo-400"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Huzaifanasir95" target="_blank" class="social-icon text-3xl transition-transform duration-300 hover:-translate-y-1 hover:text-indigo-400"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+        <svg class="section-divider" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#232b5d" fill-opacity="1" d="M0,32L1440,80L1440,0L0,0Z"></path></svg>
+        <!-- Projects Section -->
+        <section id="projects" class="container mx-auto px-6 py-20" data-aos="fade-up">
+            <h1 class="text-4xl font-bold text-center mb-12 text-white">My Projects</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-location text-indigo-400"></i> Lost and Found Website</h2>
+                    <p class="text-gray-300 mb-2">A full-stack web app to manage lost and found items with user authentication and real-time search.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: MERN Stack</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/Lost-Found-Web-Portal-for-University-Students.git" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e1b4b] text-indigo-400 font-semibold shadow-lg transition-colors hover:bg-indigo-600 hover:text-white"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="lost-and-found">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-cart-shopping text-indigo-400"></i> Microservices based E-Commerce App</h2>
+                    <p class="text-gray-300 mb-2">A cloud-native e-commerce app with 11 microservices, deployed on Kubernetes.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: Go, C#, Node.js, Python, Java, Kubernetes, AWS</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/Microservices-based-E-Commerce-App.git" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e1b4b] text-indigo-400 font-semibold shadow-lg transition-colors hover:bg-indigo-600 hover:text-white"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="ecommerce-app">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-bolt text-indigo-400"></i> Parallel-SSSP-in-Dynamic-Graphs</h2>
+                    <p class="text-gray-300 mb-2">A parallel algorithm for updating SSSP in dynamic networks using MPI, OpenMP, and METIS.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: C/C++, MPI, OpenMP, METIS</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/Parallel-SSSP-in-Dynamic-Graphs.git" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e1b4b] text-indigo-400 font-semibold shadow-lg transition-colors hover:bg-indigo-600 hover:text-white"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="parallel-sssp">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="400">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-flag-checkered text-indigo-400"></i> TORCS AI Racing Controller</h2>
+                    <p class="text-gray-300 mb-2">An AI-based car racing controller for TORCS using telemetry data and AI techniques.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: Python, TORCS</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/TORCS-AI-Racing-Controller.git" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e1b4b] text-indigo-400 font-semibold shadow-lg transition-colors hover:bg-indigo-600 hover:text-white"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="torcs-ai">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="500">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-calendar-days text-indigo-400"></i> Event Booking Website</h2>
+                    <p class="text-gray-300 mb-2">A microservices-based web app for event booking, deployed using Kubernetes.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: MERN Stack, Kubernetes</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/S4067-Assgt-EventBooking-i221053-Huzaifa-Nasir.git" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-400 text-white font-semibold shadow-lg transition hover:from-purple-400 hover:to-indigo-500"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="event-booking">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/20 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-500/40" data-aos="fade-up" data-aos-delay="600">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-indigo-400"></i> Scholarship Manager</h2>
+                    <p class="text-gray-300 mb-2">A JavaFX desktop application designed to streamline scholarship management.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: Java, JavaFX, SQL</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/Scholarship-manager-javafx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-400 text-white font-semibold shadow-lg transition hover:from-purple-400 hover:to-indigo-500"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="scholarship-manager">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="project-card relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/20 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-500/40" data-aos="fade-up" data-aos-delay="700">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-dumbbell text-indigo-400"></i> Gym Database</h2>
+                    <p class="text-gray-300 mb-2">A trainer management system to simplify gym operations and tracking.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: C#, SQL</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/Gym-Trainer-Database" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-400 text-white font-semibold shadow-lg transition hover:from-purple-400 hover:to-indigo-500"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="gym-database">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 8 -->
+                <div class="project-card relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/20 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-500/40" data-aos="fade-up" data-aos-delay="800">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-ghost text-indigo-400"></i> Pacman Game</h2>
+                    <p class="text-gray-300 mb-2">A multi-threaded Pacman game built with SFML and pthreads.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: C++, SFML</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/Pacman-Game-" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-400 text-white font-semibold shadow-lg transition hover:from-purple-400 hover:to-indigo-500"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="pacman-game">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 9 -->
+                <div class="project-card relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/20 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-500/40" data-aos="fade-up" data-aos-delay="900">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-network-wired text-indigo-400"></i> InterPlanetary File System (IPFS)</h2>
+                    <p class="text-gray-300 mb-2">A simplified IPFS using Distributed Hash Tables for efficient file storage and retrieval.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: C++</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/InterPlanetary-File-System-IPFS-" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-400 text-white font-semibold shadow-lg transition hover:from-purple-400 hover:to-indigo-500"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="ipfs">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 10 -->
+                <div class="project-card relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/20 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-500/40" data-aos="fade-up" data-aos-delay="1000">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-rocket text-indigo-400"></i> Space-Shooter Galaxy Invasion</h2>
+                    <p class="text-gray-300 mb-2">A dynamic space shooter game built using SFML with OOP principles for scalability.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: C++, SFML</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/Space-Shooter--Galaxy-Invasion-using-SFML" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-400 text-white font-semibold shadow-lg transition hover:from-purple-400 hover:to-indigo-500"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="space-shooter">View Details</button>
+                    </div>
+                </div>
+                <!-- Project 11 -->
+                <div class="project-card relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/20 p-6 flex flex-col gap-4 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-500/40" data-aos="fade-up" data-aos-delay="1100">
+                    <h2 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-tetris-puzzle text-indigo-400"></i> TETRIS Game</h2>
+                    <p class="text-gray-300 mb-2">A classic Tetris game built with SFML, offering engaging and responsive gameplay.</p>
+                    <p class="text-indigo-200 text-sm mb-2">Technologies: C++, SFML</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Huzaifanasir95/TETRIS-Game-using-SFML" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-400 text-white font-semibold shadow-lg transition hover:from-purple-400 hover:to-indigo-500"><i class="fab fa-github"></i>GitHub</a>
+                        <button class="details-button inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-lg transition hover:from-purple-600 hover:to-indigo-600" data-project="tetris-game">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <svg class="section-divider" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#4f378b" fill-opacity="1" d="M0,32L1440,80L1440,0L0,0Z"></path></svg>
+        <!-- Skills Section -->
+        <section id="skills" class="container mx-auto px-6 py-20" data-aos="fade-left">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 text-white">Skills & Certifications</h1>
+                <p class="text-gray-300 text-lg mb-12 max-w-2xl mx-auto">
+                    My professional journey is backed by industry certifications and a diverse skill set.
+                </p>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Certifications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-brain text-indigo-400"></i> <a href="https://www.coursera.org/account/accomplishments/specialization/Y6XC27WTNGLC" target="_blank" class="hover:text-indigo-400 transition-colors">Machine Learning</a></h3>
+                        <p class="text-gray-400">Stanford University via Coursera - 2024</p>
+                    </div>
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-brain text-indigo-400"></i> <a href="https://coursera.org/verify/SRMD5QHTVTGK" target="_blank" class="hover:text-indigo-400 transition-colors">Advanced Learning Algorithms</a></h3>
+                        <p class="text-gray-400">Stanford University via Coursera - 2024</p>
+                    </div>
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-brain text-indigo-400"></i> <a href="https://www.coursera.org/account/accomplishments/verify/ZGLS8X7CZCK3" target="_blank" class="hover:text-indigo-400 transition-colors">Unsupervised Learning, Recommenders, Reinforcement Learning</a></h3>
+                        <p class="text-gray-400">Stanford University via Coursera - 2024</p>
+                    </div>
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-brain text-indigo-400"></i> <a href="https://www.coursera.org/account/accomplishments/verify/TWV3HSYH9PJV" target="_blank" class="hover:text-indigo-400 transition-colors">Supervised Machine Learning: Regression and Classification</a></h3>
+                        <p class="text-gray-400">Stanford University via Coursera - 2024</p>
+                    </div>
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-brands fa-python text-yellow-400"></i> <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/7bf73bf3c5698a30d88bb58bc4b5c7b15a0eb9cb" target="_blank" class="hover:text-indigo-400 transition-colors">Associate Python Developer</a></h3>
+                        <p class="text-gray-400">Datacamp - 2024</p>
+                    </div>
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="600">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-database text-green-400"></i> <a href="https://www.datacamp.com/skill-verification/DL0034829708348" target="_blank" class="hover:text-indigo-400 transition-colors">Data Literacy</a></h3>
+                        <p class="text-gray-400">Datacamp - 2024</p>
+                    </div>
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="700">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-robot text-indigo-400"></i> <a href="https://www.datacamp.com/skill-verification/AIF0026426024995" target="_blank" class="hover:text-indigo-400 transition-colors">AI Fundamentals</a></h3>
+                        <p class="text-gray-400">Datacamp - 2024</p>
+                    </div>
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="800">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-globe text-blue-400"></i> <a href="https://www.coursera.org/account/accomplishments/verify/RSAFN22HB4VJ" target="_blank" class="hover:text-indigo-400 transition-colors">Build Website with WordPress</a></h3>
+                        <p class="text-gray-400">Coursera - 2024</p>
+                    </div>
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="900">
+                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i class="fa-solid fa-globe text-blue-400"></i> <a href="https://www.coursera.org/account/accomplishments/verify/W574R2DNA7FA" target="_blank" class="hover:text-indigo-400 transition-colors">Build Your Portfolio Website with HTML and CSS</a></h3>
+                        <p class="text-gray-400">Coursera - 2022</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-8 text-center">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Programming Languages -->
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-code text-indigo-400"></i>
+                            Programming Languages
+                        </h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>C/C++</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Python</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Java/JavaFX</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>C#</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>SQL</li>
+                        </ul>
+                    </div>
+
+                    <!-- Web Development -->
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-globe text-indigo-400"></i>
+                            Web Development
+                        </h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>MERN Stack</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>HTML/CSS/JavaScript</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Node.js/Express.js</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>MongoDB</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>React</li>
+                        </ul>
+                    </div>
+
+                    <!-- DevOps & Cloud -->
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-server text-indigo-400"></i>
+                            DevOps & Cloud
+                        </h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Docker & Kubernetes</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>AWS</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Terraform & Ansible</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>CI/CD (GitHub Actions)</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Monitoring (Prometheus/Grafana)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Game Development -->
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-gamepad text-indigo-400"></i>
+                            Game Development
+                        </h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>SFML</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Game Design Principles</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Physics Simulation</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Collision Detection</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI & Machine Learning -->
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-robot text-indigo-400"></i>
+                            AI & Machine Learning
+                        </h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>TensorFlow & Keras</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>PyTorch</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Scikit-learn</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Deep Learning</li>
+                        </ul>
+                    </div>
+
+                    <!-- Parallel Computing -->
+                    <div class="relative bg-[#0f172a]/90 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/10 p-6 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-900/40" data-aos="fade-up" data-aos-delay="600">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-microchip text-indigo-400"></i>
+                            Parallel Computing
+                        </h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>MPI</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>OpenMP</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>CUDA</li>
+                            <li><i class="fa-solid fa-check text-indigo-400 mr-2"></i>Distributed Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <svg class="section-divider" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#232b5d" fill-opacity="1" d="M0,32L1440,80L1440,0L0,0Z"></path></svg>
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto px-6 py-20" data-aos="fade-up">
+            <h1 class="text-4xl font-bold text-center mb-12 text-white">Contact Me</h1>
+            <div class="max-w-lg mx-auto mb-12 relative bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl ring-1 ring-white/20 p-8 transition-transform duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-indigo-400/40" data-aos="fade-up" data-aos-delay="100">
+                <form action="https://formspree.io/f/xovvprpw" method="POST" class="space-y-8">
+                    <div class="relative">
+                        <input type="text" id="name" name="name" required placeholder=" " class="floating-input w-full px-4 py-3 text-white rounded-md bg-white/20 border border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition" />
+                        <label for="name" class="floating-label">Full Name</label>
+                    </div>
+                    <div class="relative">
+                        <input type="email" id="email" name="email" required placeholder=" " class="floating-input w-full px-4 py-3 text-white rounded-md bg-white/20 border border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition" />
+                        <label for="email" class="floating-label">Email Address</label>
+                    </div>
+                    <div class="relative">
+                        <input type="text" id="subject" name="subject" required placeholder=" " class="floating-input w-full px-4 py-3 text-white rounded-md bg-white/20 border border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition" />
+                        <label for="subject" class="floating-label">Subject</label>
+                    </div>
+                    <div class="relative">
+                        <textarea id="message" name="message" required rows="4" placeholder=" " class="floating-input w-full px-4 py-3 text-white rounded-md bg-white/20 border border-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"></textarea>
+                        <label for="message" class="floating-label">Message</label>
+                    </div>
+                    <button type="submit" class="w-full flex items-center justify-center gap-2 text-white font-semibold py-3 px-4 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-400 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-indigo-400/40 animate-pulse focus:ring-2 focus:ring-indigo-400">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+            <div class="mt-12 text-center contact-info" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="text-3xl font-bold mb-4 text-white">Contact Information</h2>
+                <p class="text-lg mb-4">You can also reach me through the following:</p>
+                <p class="text-lg mb-2">Email: <a href="mailto:nasirhuzaifa95@gmail.com" class="text-indigo-400 hover:text-purple-400 transition-colors duration-300">nasirhuzaifa95@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Enhanced AOS initialization
+        AOS.init({
+            duration: 1200,
+            once: false,
+            mirror: true,
+            easing: 'ease-in-out-cubic',
+            anchorPlacement: 'top-bottom',
+            offset: 120,
+            delay: 100
+        });
+
+        // Smooth scroll with dynamic speed
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = Math.min(Math.abs(distance), 1500); // Dynamic duration based on distance
+                
+                let start = null;
+                function animation(currentTime) {
+                    if (start === null) start = currentTime;
+                    const timeElapsed = currentTime - start;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    const ease = easeInOutCubic(progress);
+                    window.scrollTo(0, startPosition + distance * ease);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                }
+                
+                function easeInOutCubic(t) {
+                    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                }
+                
+                requestAnimationFrame(animation);
+            });
+        });
+
+        // Project details data
+        const projectDetails = {
+            "lost-and-found": {
+                title: "Lost and Found Website",
+                description: "A full-stack web app to manage lost and found items with user authentication and real-time search.",
+                technologies: "MERN Stack (MongoDB, Express.js, React, Node.js)",
+                details: "This full-stack web application was built using the MERN stack to streamline the reporting and recovery of lost and found items. It features user authentication, real-time search, and notification systems. React powers the dynamic front-end, while Node.js and Express.js handle the backend API, with MongoDB for efficient data storage.",
+                challenges: "Ensuring secure user authentication and implementing real-time search functionality with MongoDB were significant challenges.",
+                github: "https://github.com/Huzaifanasir95/Lost-Found-Web-Portal-for-University-Students.git"
+            },
+            "ecommerce-app": {
+                title: "Microservices based E-Commerce App",
+                description: "A cloud-native e-commerce app with 11 microservices, deployed on Kubernetes.",
+                technologies: "Go, C#, Node.js, Python, Java, Kubernetes, AWS, Terraform, Ansible, GitHub Actions, ArgoCD, Prometheus, Grafana",
+                details: "Online Boutique is a cloud-native microservices demo application featuring 11 microservices, including frontend, cartservice, and paymentservice. It allows users to browse items, add to cart, and purchase. The app demonstrates technologies like Kubernetes, Istio, and gRPC. It uses Redis as a message broker and is deployed on AWS using Kubernetes, with CI/CD pipelines via GitHub Actions and ArgoCD, and monitoring via Prometheus and Grafana.",
+                challenges: "Coordinating 11 microservices with different languages, ensuring seamless gRPC communication, and configuring Kubernetes deployments with Terraform and Ansible were significant challenges.",
+                github: "https://github.com/Huzaifanasir95/Microservices-based-E-Commerce-App.git"
+            },
+            "parallel-sssp": {
+                title: "Parallel-SSSP-in-Dynamic-Graphs",
+                description: "A parallel algorithm for updating SSSP in dynamic networks using MPI, OpenMP, and METIS.",
+                technologies: "C/C++, MPI, OpenMP, METIS",
+                details: "This project implements a parallel algorithm for updating Single-Source Shortest Paths (SSSP) in dynamic networks, focusing on efficiency by updating affected subgraphs. It uses MPI for inter-node communication, OpenMP for intra-node parallelism, and METIS for graph partitioning. The project includes scalability analysis on public datasets (e.g., BHJ-1, SOC-Orkut) and was developed as part of a PDC course at FAST-NUCES.",
+                challenges: "Optimizing graph partitioning with METIS, synchronizing MPI and OpenMP for large-scale networks, and achieving scalability across datasets were key challenges.",
+                github: "https://github.com/Huzaifanasir95/Parallel-SSSP-in-Dynamic-Graphs.git"
+            },
+            "torcs-ai": {
+                title: "TORCS AI Racing Controller",
+                description: "An AI-based car racing controller for TORCS using telemetry data and AI techniques.",
+                technologies: "Python, TORCS",
+                details: "This project develops an AI-based controller for the TORCS racing simulator. It processes telemetry data (e.g., track sensors, car state) to make real-time driving decisions, optimizing speed, track following, and obstacle avoidance. The controller uses AI techniques, avoiding rule-based approaches, and was tested in a competitive tournament setting.",
+                challenges: "Processing noisy telemetry data in real-time, implementing effective AI techniques for dynamic track navigation, and optimizing performance for competitive racing were key challenges.",
+                github: "https://github.com/Huzaifanasir95/TORCS-AI-Racing-Controller.git"
+            },
+            "event-booking": {
+                title: "Event Booking Website",
+                description: "A microservices-based web app for event booking, deployed using Kubernetes.",
+                technologies: "MERN Stack, Kubernetes",
+                details: "This project is a scalable event booking platform built using a microservices architecture with the MERN stack. It consists of UserService (user management), EventService (event creation and listing), NotificationService (email/SMS notifications), BookingService (booking management), and a React-based Frontend. The application is deployed using Kubernetes for orchestration, ensuring high availability and scalability.",
+                challenges: "Designing and integrating multiple microservices with seamless communication, and configuring Kubernetes for deployment were key challenges.",
+                github: "https://github.com/Huzaifanasir95/S4067-Assgt-EventBooking-i221053-Huzaifa-Nasir.git"
+            },
+            "scholarship-manager": {
+                title: "Scholarship Manager",
+                description: "A JavaFX desktop application designed to streamline scholarship management.",
+                technologies: "Java, JavaFX, SQL",
+                details: "This project was developed to manage scholarships with multi-role functionality (Admin, Student, Guest). It leverages SQL Server for data storage, FXML for the UI, and design patterns to ensure scalability and maintainability. Key features include user authentication, scholarship application tracking, and automated notifications.",
+                challenges: "Integrating FXML with JavaFX for a seamless UI and ensuring secure data handling with SQL Server were significant challenges.",
+                github: "https://github.com/Huzaifanasir95/Scholarship-manager-javafx"
+            },
+            "gym-database": {
+                title: "Gym Database",
+                description: "A trainer management system to simplify gym operations and tracking.",
+                technologies: "C#, SQL",
+                details: "This comprehensive gym management system was built in C# with Windows Forms and SQL. It streamlines member records, fitness tracking, and diet planning through an intuitive, user-friendly database. Features include member registration, workout scheduling, and progress tracking.",
+                challenges: "Designing an efficient database schema to handle large member data and ensuring real-time updates were key challenges.",
+                github: "https://github.com/Huzaifanasir95/Gym-Trainer-Database"
+            },
+            "pacman-game": {
+                title: "Pacman Game",
+                description: "A multi-threaded Pacman game built with SFML and pthreads.",
+                technologies: "C++, SFML",
+                details: "This project is a multi-threaded implementation of the classic Pacman game in C++ using SFML graphics. It manages concurrent entity movements with semaphores and mutexes for optimal performance and smooth gameplay. Features include AI-controlled ghosts, score tracking, and multiple levels.",
+                challenges: "Synchronizing multiple threads for ghost movements and ensuring smooth gameplay without lag were major hurdles.",
+                github: "https://github.com/Huzaifanasir95/Pacman-Game-"
+            },
+            "ipfs": {
+                title: "InterPlanetary File System (IPFS)",
+                description: "A simplified IPFS using Distributed Hash Tables for efficient file storage and retrieval.",
+                technologies: "C++",
+                details: "This project implements a simplified version of IPFS using Distributed Hash Tables (DHT) in C++. It enables decentralized file storage and retrieval with efficient data lookup. Features include file hashing, peer-to-peer communication, and data redundancy.",
+                challenges: "Implementing an efficient DHT algorithm and handling network latency in a decentralized system were significant challenges.",
+                github: "https://github.com/Huzaifanasir95/InterPlanetary-File-System-IPFS-"
+            },
+            "space-shooter": {
+                title: "Space-Shooter Galaxy Invasion",
+                description: "A dynamic space shooter game built using SFML with OOP principles for scalability.",
+                technologies: "C++, SFML",
+                details: "This space shooter game was developed using SFML and C++ with a focus on object-oriented programming. It features player-controlled spaceships, enemy waves, power-ups, and a scoring system. The game is designed for scalability, allowing easy addition of new features.",
+                challenges: "Managing collision detection for multiple entities and optimizing performance for smooth gameplay were key challenges.",
+                github: "https://github.com/Huzaifanasir95/Space-Shooter--Galaxy-Invasion-using-SFML"
+            },
+            "tetris-game": {
+                title: "TETRIS Game",
+                description: "A classic Tetris game built with SFML, offering engaging and responsive gameplay.",
+                technologies: "C++, SFML",
+                details: "This project is a classic Tetris game implemented in C++ using SFML. It includes features like piece rotation, line clearing, score tracking, and increasing difficulty levels. The game is designed to be responsive and visually appealing.",
+                challenges: "Implementing smooth piece movement and handling game logic for line clearing and scoring were the main challenges.",
+                github: "https://github.com/Huzaifanasir95/TETRIS-Game-using-SFML"
+            }
+        };
+
+        // Modal functionality
+        const modal = document.createElement('div');
+        modal.className = 'fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden';
+        modal.innerHTML = `
+            <div class="relative max-w-2xl mx-auto mt-20 p-8 bg-[#0f172a]/95 rounded-2xl shadow-2xl ring-1 ring-white/10">
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="modal-content"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        function openProjectModal(projectId) {
+            const project = projectDetails[projectId];
+            if (!project) return;
+
+            const content = `
+                <h2 class="text-2xl font-bold text-white mb-4">${project.title}</h2>
+                <p class="text-gray-300 mb-4">${project.description}</p>
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Technologies</h3>
+                    <p class="text-gray-300">${project.technologies}</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Details</h3>
+                    <p class="text-gray-300">${project.details}</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold text-white mb-2">Challenges</h3>
+                    <p class="text-gray-300">${project.challenges}</p>
+                </div>
+                <a href="${project.github}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+            `;
+
+            modal.querySelector('.modal-content').innerHTML = content;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Close modal when clicking outside or on close button
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.closest('button')) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        // Update project cards to use modal
+        document.querySelectorAll('.project-card .details-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const projectId = button.getAttribute('data-project');
+                openProjectModal(projectId);
+            });
+        });
+
+        // Mobile nav
+        const hamburger = document.getElementById("hamburgerMenu");
+        const mobileNav = document.getElementById("mobileNav");
+        hamburger.addEventListener("click", () => {
+            mobileNav.classList.toggle("hidden");
+        });
+        function closeMobileNav() {
+            mobileNav.classList.add("hidden");
+        }
+        // Smooth scroll and active nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let fromTop = window.scrollY + 100;
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.getAttribute('href'));
+                if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                    link.classList.add('bg-indigo-500/30');
+                } else {
+                    link.classList.remove('bg-indigo-500/30');
+                }
+            });
+        });
+
+        // Create scroll indicator
+        const scrollIndicator = document.createElement('div');
+        scrollIndicator.className = 'scroll-indicator';
+        document.body.appendChild(scrollIndicator);
+
+        // Update scroll indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height);
+            scrollIndicator.style.transform = `scaleX(${scrolled})`;
+        });
+
+        // Mouse trail effect
+        const trails = Array.from({ length: 5 }, () => {
+            const trail = document.createElement('div');
+            trail.className = 'mouse-trail';
+            document.body.appendChild(trail);
+            return trail;
+        });
+
+        let mouseX = 0, mouseY = 0;
+        let trailIndex = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Update card hover effect
+            document.querySelectorAll('.floating-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', `${x}%`);
+                card.style.setProperty('--mouse-y', `${y}%`);
+            });
+
+            // Update trail position with delay
+            setTimeout(() => {
+                const trail = trails[trailIndex];
+                trail.style.left = mouseX - 10 + 'px';
+                trail.style.top = mouseY - 10 + 'px';
+                trail.style.opacity = '1';
+                setTimeout(() => {
+                    trail.style.opacity = '0';
+                }, 150);
+                trailIndex = (trailIndex + 1) % trails.length;
+            }, 50);
+        });
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(section);
+        });
+
+        document.querySelectorAll('.details-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const projectId = button.getAttribute('data-project');
+                if (projectId) {
+                    openProjectModal(projectId);
+                } else {
+                    // If no projectId, show a list of all projects in the modal
+                    let content = '<h2 class="text-2xl font-bold text-white mb-4">All Projects</h2>';
+                    for (const [id, project] of Object.entries(projectDetails)) {
+                        content += `<div class='mb-6'><h3 class='text-xl font-semibold text-white mb-2'>${project.title}</h3><p class='text-gray-300 mb-2'>${project.description}</p><button class='details-button px-3 py-1 rounded bg-indigo-600 text-white mt-2' data-project='${id}'>View Details</button></div>`;
+                    }
+                    modal.querySelector('.modal-content').innerHTML = content;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    // Attach event listeners to new buttons
+                    modal.querySelectorAll('.details-button').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            openProjectModal(btn.getAttribute('data-project'));
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
