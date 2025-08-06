@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Code, Globe, Gamepad2, Bot, Server, Award, ExternalLink } from 'lucide-react'
 
@@ -133,12 +133,12 @@ export default function SkillsSection({ setActiveSection }: SkillsSectionProps) 
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 md:mb-12"
         >
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-2 border border-white/10">
+          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-1 md:p-2 border border-white/10 w-full max-w-md">
             <button
               onClick={() => setActiveTab('skills')}
-              className={`px-8 py-3 rounded-xl font-medium transition-all duration-300 ${
+              className={`w-1/2 px-4 md:px-8 py-2 md:py-3 rounded-xl font-medium transition-all duration-300 text-sm md:text-base ${
                 activeTab === 'skills'
                   ? 'bg-gradient-to-r from-white to-gray-200 text-black'
                   : 'text-gray-300 hover:text-white'
@@ -148,7 +148,7 @@ export default function SkillsSection({ setActiveSection }: SkillsSectionProps) 
             </button>
             <button
               onClick={() => setActiveTab('certifications')}
-              className={`px-8 py-3 rounded-xl font-medium transition-all duration-300 ${
+              className={`w-1/2 px-4 md:px-8 py-2 md:py-3 rounded-xl font-medium transition-all duration-300 text-sm md:text-base ${
                 activeTab === 'certifications'
                   ? 'bg-gradient-to-r from-white to-gray-200 text-black'
                   : 'text-gray-300 hover:text-white'
@@ -159,87 +159,94 @@ export default function SkillsSection({ setActiveSection }: SkillsSectionProps) 
           </div>
         </motion.div>
 
-        {/* Skills Tab */}
-        {activeTab === 'skills' && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {skillCategories.map((category, index) => {
-              const Icon = category.icon
-              return (
+        {/* Content */}
+        <AnimatePresence mode="wait">
+          {/* Skills Tab */}
+          {activeTab === 'skills' && (
+            <motion.div
+              key="skills-content"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {skillCategories.map((category, index) => {
+                const Icon = category.icon
+                return (
+                  <motion.div
+                    key={category.title}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -10 }}
+                    className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-white/50 transition-all duration-300"
+                  >
+                    <div className="flex items-center mb-4">
+                      <Icon className="text-white mr-3" size={28} />
+                      <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <motion.span
+                          key={skill}
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.3, delay: (index * 0.1) + (skillIndex * 0.05) }}
+                          className="px-3 py-1 bg-gradient-to-r from-white/20 to-gray-300/20 text-gray-300 rounded-full text-sm border border-white/30"
+                        >
+                          {skill}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          )}
+
+          {/* Certifications Tab */}
+          {activeTab === 'certifications' && (
+            <motion.div
+              key="certifications-content"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+            >
+              {certifications.map((cert, index) => (
                 <motion.div
-                  key={category.title}
+                  key={`cert-${index}`}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                  className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-white/50 transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-lg rounded-2xl p-4 md:p-6 border border-white/10 hover:border-white/50 transition-all duration-300"
                 >
-                  <div className="flex items-center mb-4">
-                    <Icon className="text-white mr-3" size={28} />
-                    <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                  <div className="flex items-start justify-between mb-3 md:mb-4">
+                    <Award className="text-white flex-shrink-0" size={20} />
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                    >
+                      <ExternalLink size={14} />
+                    </motion.a>
                   </div>
                   
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <motion.span
-                        key={skill}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                        transition={{ duration: 0.3, delay: (index * 0.1) + (skillIndex * 0.05) }}
-                        className="px-3 py-1 bg-gradient-to-r from-white/20 to-gray-300/20 text-gray-300 rounded-full text-sm border border-white/30"
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
-                  </div>
+                  <h3 className="text-base md:text-lg font-bold text-white mb-2 leading-tight">{cert.title}</h3>
+                  <p className="text-gray-300 text-xs md:text-sm mb-2 leading-relaxed">{cert.institution}</p>
+                  <p className="text-gray-400 text-xs md:text-sm">{cert.year}</p>
                 </motion.div>
-              )
-            })}
-          </motion.div>
-        )}
-
-        {/* Certifications Tab */}
-        {activeTab === 'certifications' && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert.title}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-white/50 transition-all duration-300"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <Award className="text-white flex-shrink-0" size={24} />
-                  <motion.a
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
-                  >
-                    <ExternalLink size={16} />
-                  </motion.a>
-                </div>
-                
-                <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">{cert.title}</h3>
-                <p className="text-gray-300 text-sm mb-2">{cert.institution}</p>
-                <p className="text-gray-400 text-sm">{cert.year}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Skills Timeline */}
 

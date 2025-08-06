@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Home, User, Briefcase, Award, Mail, Code } from 'lucide-react'
+import { Menu, X, Home, User, Briefcase, Award, Mail, Code, Download } from 'lucide-react'
 
 interface NavigationProps {
   activeSection: string
@@ -66,6 +66,19 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                   </motion.button>
                 )
               })}
+              
+              {/* Download Resume Button */}
+              <motion.a
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
+                href="/Huzaifa Nasir Web.pdf"
+                download="Huzaifa_Nasir_Resume.pdf"
+                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-white rounded-lg hover:from-gray-600 hover:to-gray-500 transition-all duration-300 border border-white/20"
+              >
+                <Download size={18} />
+                <span>Resume</span>
+              </motion.a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -110,6 +123,20 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                   </motion.button>
                 )
               })}
+              
+              {/* Mobile Download Resume Button */}
+              <motion.a
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
+                href="/Huzaifa Nasir Web.pdf"
+                download="Huzaifa_Nasir_Resume.pdf"
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full flex items-center space-x-3 px-4 py-3 mb-2 bg-gradient-to-r from-gray-700 to-gray-600 text-white rounded-lg hover:from-gray-600 hover:to-gray-500 transition-all duration-300 border border-white/20"
+              >
+                <Download size={20} />
+                <span className="text-lg">Download Resume</span>
+              </motion.a>
             </div>
           </motion.div>
         )}

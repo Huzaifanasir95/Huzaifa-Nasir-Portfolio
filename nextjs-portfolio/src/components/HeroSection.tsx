@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Github, Linkedin, ChevronDown } from 'lucide-react'
+import { Github, Linkedin, ChevronDown, Download } from 'lucide-react'
 
 interface HeroSectionProps {
   setActiveSection: (section: string) => void
@@ -85,6 +85,17 @@ export default function HeroSection({ setActiveSection }: HeroSectionProps) {
           >
             Explore My Work
           </motion.button>
+
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="/Huzaifa Nasir Web.pdf"
+            download="Huzaifa_Nasir_Resume.pdf"
+            className="px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full text-white font-semibold shadow-lg hover:shadow-gray-500/25 transition-all duration-300 flex items-center gap-2 border border-white/20"
+          >
+            <Download size={20} />
+            Download Resume
+          </motion.a>
 
           <div className="flex items-center space-x-4">
             <motion.a
