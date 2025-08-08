@@ -37,7 +37,7 @@ export default function ExperienceSection({ setActiveSection }: ExperienceSectio
         'Improved proficiency in modern UI/UX design with Tailwind CSS and responsive design principles'
       ],
       technologies: ['Next.js', 'TypeScript', 'AI/ML', 'n8n', 'GitHub Actions', 'Vercel', 'CI/CD', 'Google Gemini AI', 'Supabase', 'MongoDB', 'Tailwind CSS'],
-      link: 'https://nexium.com'
+      link: 'https://www.nexium.ltd/'
     }
   ]
 
